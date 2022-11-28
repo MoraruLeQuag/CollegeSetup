@@ -1,0 +1,1 @@
+advfirewall firewall set rule group="Découverte du réseau" new enable=Yes
