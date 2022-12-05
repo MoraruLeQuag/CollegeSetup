@@ -122,7 +122,7 @@ powershell Restart-Computer -Force
 
 
 :IACA-No
-echo Commande annulee.
+echo Commande annulée.
 Pause
 cls
 GOTO MENU
@@ -136,15 +136,14 @@ if not exist "C:\Users\%username%\Desktop\SetupCollege\kill.cmd" powershell wget
 echo tous les fichiers ont été vérifiés !
 echo Installations des logiciels ...
 rem la vie c'est de la merde
-echo Geogebra en cours d'installation ...
-echo GEOGEBRA INSTALLING !
-echo photofiltre en cours de téléchargement ...
-powershell wget -outf c:\Users\%username%\Desktop\SetupCollege\Ninite.exe https://ninite.com/audacity-firefox-gimp-libreoffice-paint.net-vlc/ninite.exe
-powershell wget -outf C:\Users\%username%\Desktop\SetupCollege\GeoGebra.exe https://download.geogebra.org/installers/6.0/GeoGebra-Windows-Installer-6-0-745-0.exe
-powershell wget -outf C:\Users\%username%\Desktop\SetupCollege\PhotoFiltre11.exe http://www.photofiltre-studio.com/pf11/photofiltre11.4.1_fr_setup.exe
-powershell wget -outFile C:\Users\%username%\Desktop\SetupCollege\ScratchSetup.exe https://www.dropbox.com/s/chssfsjsi7jw5gf/Scratch%203.29.1%20Setup.exe?dl=1
+
+if not exist "C:\Users\%username%\Desktop\SetupCollege\Ninite.exe" powershell wget -outf c:\Users\%username%\Desktop\SetupCollege\Ninite.exe https://ninite.com/audacity-firefox-gimp-libreoffice-paint.net-vlc/ninite.exe
+if not exist "C:\Users\%username%\Desktop\SetupCollege\GeoGebra.exe" powershell wget -outf C:\Users\%username%\Desktop\SetupCollege\GeoGebra.exe https://download.geogebra.org/installers/6.0/GeoGebra-Windows-Installer-6-0-745-0.exe
+if not exist "C:\Users\%username%\Desktop\SetupCollege\PhotoFiltre11.exe" powershell wget -outf C:\Users\%username%\Desktop\SetupCollege\PhotoFiltre11.exe http://www.photofiltre-studio.com/pf11/photofiltre11.4.1_fr_setup.exe
+if not exist "C:\Users\%username%\Desktop\SetupCollege\ScratchSetup.exe" powershell wget -outFile C:\Users\%username%\Desktop\SetupCollege\ScratchSetup.exe https://www.dropbox.com/s/chssfsjsi7jw5gf/Scratch%203.29.1%20Setup.exe?dl=1
 start c:\Users\%username%\Desktop\SetupCollege\Full.exe 
-echo Scratch INSTALLING !
+cls
+echo L'installeur vient de démarrer. Merci de ne pas intervenir sur l'ordinateur...
 pause
 
 if exist C:\Users\%username%\Desktop\geek.exe (
